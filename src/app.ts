@@ -22,6 +22,13 @@ app.get('/', (req, res) => {
   res.json('Server is running')
 })
 
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    connections: io.engine.clientsCount,
+  })
+})
+
 app.use('/api/registration', registrationRouter)
 
 const patientIo = io.of('/patient')
@@ -30,6 +37,6 @@ const staffIo = io.of('/staff')
 initializeStaffIo(staffIo)
 initializePatientIo(patientIo)
 
-server.listen(port, () => {
+server.listen(Number(port), '0.0.0.0', () => {
   logger.info(`server listening on port ${port}`)
 })
