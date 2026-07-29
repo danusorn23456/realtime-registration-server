@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+
+# build output
+/dist
+
+# runtime data (sqlite db + wal/shm files)
+/data
+
+# env files
+.env*
+!.env.example
+
+# misc
+.DS_Store
+*.tsbuildinfo
