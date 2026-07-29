@@ -31,5 +31,5 @@ initializeStaffIo(staffIo)
 initializePatientIo(patientIo)
 
 server.listen(port, () => {
-  logger.info(`server running at http://localhost:${port}`)
+  logger.info(`server listening on port ${port}`)
 })
